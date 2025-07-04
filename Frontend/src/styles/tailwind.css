@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors - Trust-building blue for reliable AI interaction */
+    --color-primary: #2563EB; /* blue-600 */
+    --color-primary-50: #EFF6FF; /* blue-50 */
+    --color-primary-100: #DBEAFE; /* blue-100 */
+    --color-primary-200: #BFDBFE; /* blue-200 */
+    --color-primary-300: #93C5FD; /* blue-300 */
+    --color-primary-400: #60A5FA; /* blue-400 */
+    --color-primary-500: #3B82F6; /* blue-500 */
+    --color-primary-600: #2563EB; /* blue-600 */
+    --color-primary-700: #1D4ED8; /* blue-700 */
+    --color-primary-800: #1E40AF; /* blue-800 */
+    --color-primary-900: #1E3A8A; /* blue-900 */
+    --color-primary-foreground: #FFFFFF; /* white */
+
+    /* Secondary Colors - Progress green for successful conversation flow */
+    --color-secondary: #059669; /* emerald-600 */
+    --color-secondary-50: #ECFDF5; /* emerald-50 */
+    --color-secondary-100: #D1FAE5; /* emerald-100 */
+    --color-secondary-200: #A7F3D0; /* emerald-200 */
+    --color-secondary-300: #6EE7B7; /* emerald-300 */
+    --color-secondary-400: #34D399; /* emerald-400 */
+    --color-secondary-500: #10B981; /* emerald-500 */
+    --color-secondary-600: #059669; /* emerald-600 */
+    --color-secondary-700: #047857; /* emerald-700 */
+    --color-secondary-800: #065F46; /* emerald-800 */
+    --color-secondary-900: #064E3B; /* emerald-900 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+
+    /* Accent Colors - Warm orange for positive feedback moments */
+    --color-accent: #EA580C; /* orange-600 */
+    --color-accent-50: #FFF7ED; /* orange-50 */
+    --color-accent-100: #FFEDD5; /* orange-100 */
+    --color-accent-200: #FED7AA; /* orange-200 */
+    --color-accent-300: #FDBA74; /* orange-300 */
+    --color-accent-400: #FB923C; /* orange-400 */
+    --color-accent-500: #F97316; /* orange-500 */
+    --color-accent-600: #EA580C; /* orange-600 */
+    --color-accent-700: #C2410C; /* orange-700 */
+    --color-accent-800: #9A3412; /* orange-800 */
+    --color-accent-900: #7C2D12; /* orange-900 */
+    --color-accent-foreground: #FFFFFF; /* white */
+
+    /* Background Colors */
+    --color-background: #FAFAFA; /* gray-50 */
+    --color-surface: #FFFFFF; /* white */
+    --color-surface-secondary: #F9FAFB; /* gray-50 */
+
+    /* Text Colors */
+    --color-text-primary: #111827; /* gray-900 */
+    --color-text-secondary: #6B7280; /* gray-500 */
+    --color-text-muted: #9CA3AF; /* gray-400 */
+
+    /* Status Colors */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-50: #ECFDF5; /* emerald-50 */
+    --color-success-100: #D1FAE5; /* emerald-100 */
+    --color-success-foreground: #FFFFFF; /* white */
+
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-50: #FFFBEB; /* amber-50 */
+    --color-warning-100: #FEF3C7; /* amber-100 */
+    --color-warning-foreground: #FFFFFF; /* white */
+
+    --color-error: #EF4444; /* red-500 */
+    --color-error-50: #FEF2F2; /* red-50 */
+    --color-error-100: #FEE2E2; /* red-100 */
+    --color-error-foreground: #FFFFFF; /* white */
+
+    /* Border Colors */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-border-light: #F3F4F6; /* gray-100 */
+
+    /* Brand Colors for Conversion */
+    --color-brand-primary: #4F46E5; /* indigo-600 */
+    --color-brand-secondary: #06B6D4; /* cyan-500 */
+    --color-conversion-accent: #F59E0B; /* amber-500 */
+    --color-trust-builder: #10B981; /* emerald-500 */
+    --color-cta: #DC2626; /* red-600 */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-text-primary;
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+  }
+}
+
+@layer components {
+  .conversation-bubble {
+    @apply rounded-2xl px-4 py-3 max-w-xs shadow-sm;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .conversation-bubble-user {
+    @apply bg-primary text-primary-foreground ml-auto;
+  }
+
+  .conversation-bubble-ai {
+    @apply bg-surface border border-border;
+  }
+
+  .gradient-breathing {
+    background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
+    animation: breathe 8s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+
+  .conversation-entrance {
+    animation: slideInUp 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .pulse-gentle {
+    animation: pulseGentle 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGentle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+
+  .typing-indicator {
+    @apply flex space-x-1;
+  }
+
+  .typing-dot {
+    @apply w-2 h-2 bg-text-secondary rounded-full;
+    animation: typingDot 1.4s ease-in-out infinite;
+  }
+
+  .typing-dot:nth-child(1) { animation-delay: 0s; }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes typingDot {
+    0%, 60%, 100% { opacity: 0.3; }
+    30% { opacity: 1; }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .transition-smooth {
+    transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+}

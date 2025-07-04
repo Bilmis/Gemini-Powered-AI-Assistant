@@ -1,0 +1,6 @@
+flask
+requests
+python-dotenv
+psycopg2-binary
+google-generativeai
+flask-cors

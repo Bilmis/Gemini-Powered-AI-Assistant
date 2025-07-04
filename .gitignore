@@ -1,0 +1,18 @@
+# Ignore all .env files everywhere
+**/.env
+**/.env.*
+
+# Node & frontend
+/frontend/node_modules/
+/frontend/build/
+/frontend/dist/
+
+# Python & backend
+/backend/venv/
+/backend/__pycache__/
+/backend/*.pyc
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db
